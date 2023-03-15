@@ -71,27 +71,27 @@ describe("This Is Log in test", () => {
 
     });
 
-    // it('Click on Admin Profile', async () => {
-    //     await browser.url('https://demo3.pc-staging.com/admin/profile');
-    //     const findOperatoin = await $("#field-35-label");
-    //     const fieldLevel = await findOperatoin.getText();
-    //     console.log("Lebel Print:::", fieldLevel);
-    //     // await expect(fieldLevel).toBeDisplayed('Business Name');
-    //     const clickevent = await $("#field-35");
-    //     await clickevent.setValue('Shemul Grecery Shop');
+    it('Click on Admin Profile', async () => {
+        await browser.url('https://demo3.pc-staging.com/admin/profile');
+        const findOperatoin = await $("#field-35-label");
+        const fieldLevel = await findOperatoin.getText();
+        console.log("Lebel Print:::", fieldLevel);
+        // await expect(fieldLevel).toBeDisplayed('Business Name');
+        const clickevent = await $("#field-35");
+        await clickevent.setValue('Shemul Grecery Shop');
 
-    //     const saveButton = $('button[type="submit"]');
+        const saveButton = $('button[type="submit"]');
 
-    //     await saveButton.click();
+        await saveButton.click();
 
 
-    //     await browser.pause(50000);
+        await browser.pause(50000);
 
 
         // const sumClassValue = await sumationAreaElement.getAttribute("class");
         // console.log(sumClassValue);
 
 
-    // });
+    });
 
 })
