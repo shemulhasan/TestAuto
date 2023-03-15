@@ -23,7 +23,7 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './test/specs/**/findElement.js'
+        './test/specs/**/pcStagingLogin.js'
     ],
     // Patterns to exclude.
     exclude: [

@@ -1,21 +1,17 @@
-// import { By } from "selenium-webdriver";
-// import { Driver } from "selenium-webdriver/chrome";
-// import { get } from "selenium-webdriver/http";
+// import pcLoginPage from "../pageobjects/pc.login.page.js";
 
 
 describe("This Is Log in test", () => {
 
-    // beforeEach("Open App", async () => {
-    //     await browser.url('https://demo3.pc-staging.com/signin/');
-    //     await browser.maximizeWindow();
-
-    // })
-
-    it("Login Functionality Check", async () => {
+    beforeEach("Open App", async () => {
         await browser.url('https://demo3.pc-staging.com/signin/');
         await browser.maximizeWindow();
-        // await browser.url('https://demo3.pc-staging.com/signin/');
-        // await browser.maximizeWindow();
+
+    })
+
+    it("Login Functionality Check", async () => {
+        // await pcLoginPage.openApp();
+     
 
         const userNameTextBox = $("#field-3");
         const passwordTextBox = $("#field-4");
@@ -36,8 +32,8 @@ describe("This Is Log in test", () => {
         const securityNumberTwo = await elem2.getText();
 
 
-        console.log("securityNumberOne:::", securityNumberOne, "securityNumberTwo::", securityNumberTwo);
-        console.log("securityNumberOne typeof:::", typeof Number(securityNumberOne), "securityNumberTwo typeof::", typeof Number(securityNumberTwo));
+        // console.log("securityNumberOne:::", securityNumberOne, "securityNumberTwo::", securityNumberTwo);
+        // console.log("securityNumberOne typeof:::", typeof Number(securityNumberOne), "securityNumberTwo typeof::", typeof Number(securityNumberTwo));
 
 
         const result = (Number(securityNumberOne) + Number(securityNumberTwo));
@@ -62,6 +58,7 @@ describe("This Is Log in test", () => {
         // console.log(sumClassValue);
 
         // await expect(sumationAreaElement).toBeAttribute("class","chakra-form-control css-qav60l");
+        // await pcLoginPage.performLogin('demo3@gmail.com', '123456789', secuN1, secuN2);
 
 
     });
