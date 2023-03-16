@@ -1,4 +1,4 @@
-// import pcLoginPage from "../pageobjects/pc.login.page.js";
+// import pcLoginPage from "../pageobjects/pc.login.page.js"
 
 
 describe("This Is Log in test", () => {
@@ -11,7 +11,7 @@ describe("This Is Log in test", () => {
 
     it("Login Functionality Check", async () => {
         // await pcLoginPage.openApp();
-     
+
 
         const userNameTextBox = $("#field-3");
         const passwordTextBox = $("#field-4");
@@ -64,20 +64,22 @@ describe("This Is Log in test", () => {
     });
 
     it('Click on Admin Profile', async () => {
-        await browser.url('https://demo3.pc-staging.com/admin/profile');
-        const findOperatoin = await $("#field-35-label");
-        const fieldLevel = await findOperatoin.getText();
-        console.log("Lebel Print:::", fieldLevel);
-        // await expect(fieldLevel).toBeDisplayed('Business Name');
-        const clickevent = await $("#field-35");
-        await clickevent.setValue('Shemul Grecery Shop');
 
-        const saveButton = $('button[type="submit"]');
+        const xpath1 = $('//*[@id="root"]/main/div/div[1]/ul/div/div[1]/li[2]');
 
-        await saveButton.click();
+        await xpath1.click();
+        const xpath2 = $('//*[@id="root"]/main/div/div[1]/ul/div/div[1]/li[2]/a[1]');
+        await xpath2.click();
+
+        // await browser.pause(30000);
+
+        const createPages =  $('//*[@id="root"]/main/div/div[2]/div[2]/div/div/div[1]/div/button/a');
+       
+        
+        await createPages.click();
 
 
-        await browser.pause(50000);
+        await browser.pause(5000);
 
 
         // const sumClassValue = await sumationAreaElement.getAttribute("class");
