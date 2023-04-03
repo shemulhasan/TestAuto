@@ -73,12 +73,19 @@ describe("This Is Log in test", () => {
 
         // await browser.pause(30000);
 
-        const createPages =  $('//*[@id="root"]/main/div/div[2]/div[2]/div/div/div[1]/div/button/a');
-       
-        
+        const createPages = $('//*[@id="root"]/main/div/div[2]/div[2]/div/div/div[1]/div/button/a');
         await createPages.click();
 
+        const titleName =$('//*[@id="pageTitle"]');
+        await titleName.setValue('Contact us');
+        const pageName =$('//*[@id="pageName"]');
+        await pageName.setValue('Contact us');
 
+
+        const continueButton = $('button[type="submit"]');
+        await continueButton.click();
+
+        
         await browser.pause(5000);
 
 

@@ -11,14 +11,8 @@ describe('This is new site for click check new window', () => {
         const clickPricing = $('//*[@id="__next"]/header/div/div/div/div[2]/nav/ul/li[3]/a');
 
         await clickPricing.click();
-
-        // const clickPricingPlan = $('//*[@id="__next"]/main/section[2]/div/div[2]/div[2]/div/div[2]/a');
-
-        // await clickPricingPlan.click();
-        // const windowName = ("")
+        
         await browser.newWindow("https://admin.pc-staging.com/signin?registration=true&subscription=6409a8eb4ca5bf96cff1e992");
-
-        // await browser.url('https://admin.pc-staging.com/signin?registration=true&subscription=6409a8eb4ca5bf96cff1e992');
 
         const inputYourName = $('//*[@id="field-5"]');
         const inputEmail = $('//*[@id="field-6"]');

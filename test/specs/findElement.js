@@ -48,16 +48,7 @@ describe("This Is Log in test", () => {
         await loginButtonClick.click();
         await browser.pause(5000)
 
-        //     const numberText = await summationText.getText();
-        //     console.log(numberText);
-
-        //    await expect(result).toHaveText();
-
-        // const sumationAreaElement=$("#chakra-form-control css-qav60l");
-        // const sumClassValue = await sumationAreaElement.getAttribute("class");
-        // console.log(sumClassValue);
-
-        // await expect(sumationAreaElement).toBeAttribute("class","chakra-form-control css-qav60l");
+       
         await browser.url('https://demo3.pc-staging.com/admin/');
         const elements =$$("//a");
 
@@ -67,29 +58,6 @@ describe("This Is Log in test", () => {
                 console.log('linkText::',linkText); 
             }           
         }
-
-
-    });
-
-    it('Click on Admin Profile', async () => {
-        await browser.url('https://demo3.pc-staging.com/admin/profile');
-        const findOperatoin = await $("#field-35-label");
-        const fieldLevel = await findOperatoin.getText();
-        console.log("Lebel Print:::", fieldLevel);
-        // await expect(fieldLevel).toBeDisplayed('Business Name');
-        const clickevent = await $("#field-35");
-        await clickevent.setValue('Shemul Grecery Shop');
-
-        const saveButton = $('button[type="submit"]');
-
-        await saveButton.click();
-
-
-        await browser.pause(50000);
-
-
-        // const sumClassValue = await sumationAreaElement.getAttribute("class");
-        // console.log(sumClassValue);
 
 
     });
