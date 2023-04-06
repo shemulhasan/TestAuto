@@ -23,7 +23,7 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './test/specs/**/profileUpdate.js'
+        './test/specs/**/findLink.js'
     ],
     // Patterns to exclude.
     exclude: [
