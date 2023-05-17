@@ -1,17 +1,14 @@
 describe('This is new site for click check new window', () => {
-    beforeEach("Open App", async () => {
+    before("Open App", async () => {
         await browser.url('https://pc-staging.com/');
         await browser.maximizeWindow();
     })
 
     it('Open a New window', async () => {
 
-
-
         const clickPricing = $('//*[@id="__next"]/header/div/div/div/div[2]/nav/ul/li[3]/a');
-
         await clickPricing.click();
-        
+
         await browser.newWindow("https://admin.pc-staging.com/signin?registration=true&subscription=6409a8eb4ca5bf96cff1e992");
 
         const inputYourName = $('//*[@id="field-5"]');
@@ -34,10 +31,10 @@ describe('This is new site for click check new window', () => {
 
         const inputName = $('//*[@id="field-11"]');
         const emailInput = $('//*[@id="field-12"]');
-        const cardInfoInput =$('//*[@id="chakra-modal--body-4"]/form/div[3]/div/div');
-        console.log("Card info:::",cardInfoInput);
+        const cardInfoInput = $('//*[@id="chakra-modal--body-4"]/form/div[3]/div/div');
+        console.log("Card info:::", cardInfoInput);
         const expireMonth = $('//*[@id="root"]/form/div/div[2]/span[2]/span[1]/span/span');
-        const inputCvc =$('//*[@id="root"]/form/div/div[2]/span[2]/span[2]/span/span/input');
+        const inputCvc = $('//*[@id="root"]/form/div/div[2]/span[2]/span[2]/span/span/input');
 
         await inputName.setValue("Hasan Shemul");
         await emailInput.setValue("shemul@gmail.com");

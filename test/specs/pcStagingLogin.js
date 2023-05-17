@@ -3,7 +3,7 @@
 
 describe("This Is Log in test", () => {
 
-    beforeEach("Open App", async () => {
+    before("Open App", async () => {
         await browser.url('https://demo3.pc-staging.com/signin/');
         await browser.maximizeWindow();
 
