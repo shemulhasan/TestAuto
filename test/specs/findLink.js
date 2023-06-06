@@ -18,7 +18,7 @@ describe('Find all Clickable Link', () => {
                 console.log('linkText::',linkText); 
             }           
         }
-        await browser.pause(7000);
+        await browser.pause(3000);
     });
 
 });

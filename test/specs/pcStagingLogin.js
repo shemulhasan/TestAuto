@@ -1,10 +1,7 @@
-// import pcLoginPage from "../pageobjects/pc.login.page.js"
-
-
 describe("This Is Log in test", () => {
 
     before("Open App", async () => {
-        await browser.url('https://demo3.pc-staging.com/signin/');
+        await browser.url('https://testshop.pc-staging.com/signin/');
         await browser.maximizeWindow();
 
     })
@@ -16,25 +13,15 @@ describe("This Is Log in test", () => {
         const userNameTextBox = $("#field-3");
         const passwordTextBox = $("#field-4");
 
-        // const summationTextBox =$("#field-5-label");
-        // const loginButton =$ ('/html/body/div[1]/main/div/div[1]/div/form/div/button[1]')
-
-        await userNameTextBox.setValue("demo3@gmail.com");
+        await userNameTextBox.setValue("johnplayer@yopmail.com");
         await passwordTextBox.setValue("123456789");
 
 
         const elem1 = await $('span#securityNumberOne');
-        // console.log(await elem.getText());
         const securityNumberOne = await elem1.getText();
 
         const elem2 = await $('span#securityNumberTwo');
-        // console.log(await elem.getText());
         const securityNumberTwo = await elem2.getText();
-
-
-        // console.log("securityNumberOne:::", securityNumberOne, "securityNumberTwo::", securityNumberTwo);
-        // console.log("securityNumberOne typeof:::", typeof Number(securityNumberOne), "securityNumberTwo typeof::", typeof Number(securityNumberTwo));
-
 
         const result = (Number(securityNumberOne) + Number(securityNumberTwo));
         console.log("result:::", result);
@@ -48,51 +35,63 @@ describe("This Is Log in test", () => {
         await loginButtonClick.click();
         await browser.pause(5000)
 
-        //     const numberText = await summationText.getText();
-        //     console.log(numberText);
-
-        //    await expect(result).toHaveText();
-
-        // const sumationAreaElement=$("#chakra-form-control css-qav60l");
-        // const sumClassValue = await sumationAreaElement.getAttribute("class");
-        // console.log(sumClassValue);
-
-        // await expect(sumationAreaElement).toBeAttribute("class","chakra-form-control css-qav60l");
-        // await pcLoginPage.performLogin('demo3@gmail.com', '123456789', secuN1, secuN2);
-
 
     });
-
-    it('Click on Admin Profile', async () => {
-
-        const xpath1 = $('//*[@id="root"]/main/div/div[1]/ul/div/div[1]/li[2]');
-
-        await xpath1.click();
-        const xpath2 = $('//*[@id="root"]/main/div/div[1]/ul/div/div[1]/li[2]/a[1]');
-        await xpath2.click();
-
-        // await browser.pause(30000);
-
-        const createPages = $('//*[@id="root"]/main/div/div[2]/div[2]/div/div/div[1]/div/button/a');
-        await createPages.click();
-
-        const titleName =$('//*[@id="pageTitle"]');
-        await titleName.setValue('Contact us');
-        const pageName =$('//*[@id="pageName"]');
-        await pageName.setValue('Contact us');
+    
+    //         it("Handle Modal pop up", async ()=> {
+    //             await browser.url("https://testshop.pc-staging.com/admin/subscription-price");
+    //             await  browser.pause(5000);
+    //             const clickYeary =   $('/*[@id="root"]/main/div/div[2]/div[2]/div[1]/div/p[2]');
+    //             await clickYeary.click();
+    //             await browser.pause(5000);
+    //             const clickPackage = $('//*[@id="root"]/main/div/div[2]/div[2]/div[2]/div[1]/div/div/button');
+    //             await clickPackage.click();
+           
+         
+    //     const cardNumber = $('//*[@id="chakra-modal--body-27"]/div/form/div[1]/div[1]/div/div/table/tbody/tr[3]');
+    //     // (await cardNumber).setValue('4242424242424242');
+    //     await   cardNumber.click();
+    //     const buttonClick =$('//*[@id="chakra-modal--body-27"]/div/form/div[2]/button[2]');
+    //     await  buttonClick.click();
 
 
-        const continueButton = $('button[type="submit"]');
-        await continueButton.click();
-
-        
-        await browser.pause(5000);
+    //     await  browser.pause(1000)
+    //     // expect(await getDocumentText())
+    //     //     .toContain('Your content goes here.')
 
 
-        // const sumClassValue = await sumationAreaElement.getAttribute("class");
-        // console.log(sumClassValue);
+
+    // });
+    it('Handle multiple windows', async () => {
+        await browser.url("https://testshop.pc-staging.com/admin/subscription-price");
+                await  browser.pause(5000);
+                const clickYeary =   $('//*[@id="root"]/main/div/div[2]/div[2]/div[1]/div/p[2]');
+                await clickYeary.click();
+                await browser.pause(5000);
+                const clickPackage = $('//*[@id="root"]/main/div/div[2]/div[2]/div[2]/div[1]/div/div/button');
+                await clickPackage.click();
+           
+         
+        const cardNumber = $('//*[@id="field-23"]');
+        // (await cardNumber).setValue('4242424242424242');
+        await   cardNumber.setValue('FREE2');
+        const buttonClick =$('//*[@id="chakra-modal--body-19"]/div/form/div[1]/div[2]/button');
+        await  buttonClick.click();
 
 
-    });
+
+
+
+
+	// 	// navigate to the url
+	// await browser.url("https://chercher.tech/practice/hidden-division-popup");
+    //     //click the element which open popup
+    //    const popclick= $('/html/body/a')
+    //    await popclick.click()
+    //     // send text to Name field on overlay
+    //   const input=  $('/html/body/div/div/input')
+    //   await input.setValue("Hidden Division Text");
+    //    await browser.pause(3000);
+    })
 
 })

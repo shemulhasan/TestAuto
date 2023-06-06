@@ -8,19 +8,20 @@ describe('This is new site for click check new window', () => {
 
         const clickPricing = $('//*[@id="__next"]/header/div/div/div/div[2]/nav/ul/li[3]/a');
         await clickPricing.click();
-
-        await browser.newWindow("https://admin.pc-staging.com/signin?registration=true&subscription=6409a8eb4ca5bf96cff1e992");
-
-        const inputYourName = $('//*[@id="field-5"]');
-        const inputEmail = $('//*[@id="field-6"]');
-        const inputBusiness = $('//*[@id="field-7"]');
+        const handles = await browser.getWindowHandles();
+        await browser.switchToWindow(handles[0]);
+        console.log('this is Handle Data::::::::::::', handles);
+        
+        const inputYourName = $('//*[@id="field-4"]');
+        const inputEmail = $('//*[@id="field-5"]');
+        const inputBusiness = $('//*[@id="field-6"]');
         const inputPhone = $('//*[@id="chakra-modal--body-3"]/div/form/div[2]/div[2]/div/input');
-        const inputPassword = $('//*[@id="field-9"]');
-        const inputConPass = $('//*[@id="field-10"]');
+        const inputPassword = $('//*[@id="field-8"]');
+        const inputConPass = $('//*[@id="field-9"]');
 
         await inputYourName.setValue("Test mocha");
-        await inputEmail.setValue("shemul.prolific+19@gmail.com");
-        await inputBusiness.setValue("mochatests");
+        await inputEmail.setValue("abs.sdl2021+3@gmail.com");
+        await inputBusiness.setValue("abssdl");
         await inputPhone.setValue("01740033862");
         await inputPassword.setValue("123456789");
         await inputConPass.setValue("123456789");
@@ -50,5 +51,12 @@ describe('This is new site for click check new window', () => {
         await procedButton.click();
 
         await browser.pause(50000);
+
+    //     const handles = await browser.getWindowHandles()
+    //     await browser.switchToWindow(handles[0])
+    // console.log(handles);
+    //     await browser.closeWindow()
+    //     await browser.switchToWindow(handles[1])
+    //     console.log(await browser.getTitle()) 
     });
 });
