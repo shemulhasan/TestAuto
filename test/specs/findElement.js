@@ -49,17 +49,29 @@ describe("This Is Log in test", () => {
         await browser.pause(5000)
 
        
-        await browser.url('https://demo3.pc-staging.com/admin/');
-        const elements =$$("//a");
+        // await browser.url('https://demo3.pc-staging.com/admin/');
+        // const elements =$$("//a");
 
-        for (let i = 0; i < await elements.length; i++) {
-            const linkText = await elements[i].getText();
-            if (linkText !=="") {
-                console.log('linkText::',linkText); 
-            }           
-        }
+        // for (let i = 0; i < await elements.length; i++) {
+        //     const linkText = await elements[i].getText();
+        //     if (linkText !=="") {
+        //         console.log('linkText::',linkText); 
+        //     }           
+        // }
 
 
+    });
+    it('Create Footer', async() => {
+
+        const clickSite = $('//*[@id="root"]/main/div/div[1]/ul/div/div[1]/li[2]/div/span[2]');
+        const clickfooter = $('//*[@id="root"]/main/div/div[1]/ul/div/div[1]/li[2]/a[4]/div/div/span');
+        const clickCreatebutton =$('//*[@id="root"]/main/div/div[2]/div[2]/div/div/div[1]/button');
+
+        await clickSite.click();
+        await clickfooter.click();
+        await clickCreatebutton.click();
+         await browser.pause(5000);
+        
     });
 
 })

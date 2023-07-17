@@ -5,7 +5,7 @@ describe('This is new site for click check new window', () => {
     // })
 
     it('Home Page Check', async () => {
-        await browser.url('https://pc-staging.com/');
+        await browser.url('https://pc-staging.com');
         await browser.maximizeWindow();
 
 
@@ -18,7 +18,10 @@ describe('This is new site for click check new window', () => {
  
     });
     it('Button Check for Clicable', async() => {
+        
+
         const regButton =$('//*[@id="__next"]/header/div/div/div/div[3]/div/a');
-        await expect(regButton).not.toBeClickable();
+        await expect(regButton).toBeClickable();
     });
+   
 });

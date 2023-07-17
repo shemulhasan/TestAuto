@@ -37,61 +37,21 @@ describe("This Is Log in test", () => {
 
 
     });
+
+    it('Template Check', async() => {
+        await browser.url('https://testshop.pc-staging.com/admin/builder/page/create');
+
     
-    //         it("Handle Modal pop up", async ()=> {
-    //             await browser.url("https://testshop.pc-staging.com/admin/subscription-price");
-    //             await  browser.pause(5000);
-    //             const clickYeary =   $('/*[@id="root"]/main/div/div[2]/div[2]/div[1]/div/p[2]');
-    //             await clickYeary.click();
-    //             await browser.pause(5000);
-    //             const clickPackage = $('//*[@id="root"]/main/div/div[2]/div[2]/div[2]/div[1]/div/div/button');
-    //             await clickPackage.click();
-           
-         
-    //     const cardNumber = $('//*[@id="chakra-modal--body-27"]/div/form/div[1]/div[1]/div/div/table/tbody/tr[3]');
-    //     // (await cardNumber).setValue('4242424242424242');
-    //     await   cardNumber.click();
-    //     const buttonClick =$('//*[@id="chakra-modal--body-27"]/div/form/div[2]/button[2]');
-    //     await  buttonClick.click();
+       const importTmaplate = $('//*[@id="root"]/main/div/div[2]/div[3]/div[1]/div/button[2]');
+       await importTmaplate.click();
 
+       const clickTemplateInsert =$('//*[@id="chakra-modal--body-1674"]/div[3]/ul/li[4]/a');
+       await clickTemplateInsert.click();
 
-    //     await  browser.pause(1000)
-    //     // expect(await getDocumentText())
-    //     //     .toContain('Your content goes here.')
+       await browser.pause(5000);
 
+    });
 
-
-    // });
-    it('Handle multiple windows', async () => {
-        await browser.url("https://testshop.pc-staging.com/admin/subscription-price");
-                await  browser.pause(5000);
-                const clickYeary =   $('//*[@id="root"]/main/div/div[2]/div[2]/div[1]/div/p[2]');
-                await clickYeary.click();
-                await browser.pause(5000);
-                const clickPackage = $('//*[@id="root"]/main/div/div[2]/div[2]/div[2]/div[1]/div/div/button');
-                await clickPackage.click();
-           
-         
-        const cardNumber = $('//*[@id="field-23"]');
-        // (await cardNumber).setValue('4242424242424242');
-        await   cardNumber.setValue('FREE2');
-        const buttonClick =$('//*[@id="chakra-modal--body-19"]/div/form/div[1]/div[2]/button');
-        await  buttonClick.click();
-
-
-
-
-
-
-	// 	// navigate to the url
-	// await browser.url("https://chercher.tech/practice/hidden-division-popup");
-    //     //click the element which open popup
-    //    const popclick= $('/html/body/a')
-    //    await popclick.click()
-    //     // send text to Name field on overlay
-    //   const input=  $('/html/body/div/div/input')
-    //   await input.setValue("Hidden Division Text");
-    //    await browser.pause(3000);
-    })
+   
 
 })
